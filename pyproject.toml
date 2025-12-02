@@ -1,0 +1,24 @@
+[project]
+name = "lab-sql-de25-johnny-hyytiainen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Johnny Hyytiäinen", email = "Johnny.Hyytiainen@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "black>=25.11.0",
+    "duckdb>=1.4.2",
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.7",
+    "pandas>=2.3.3",
+]
+
+[project.scripts]
+lab-sql-de25-johnny-hyytiainen = "lab_sql_de25_johnny_hyytiainen:main"
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"

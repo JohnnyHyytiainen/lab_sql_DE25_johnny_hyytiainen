@@ -1,0 +1,32 @@
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+*.code-workspace
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.ipython/
+
+# Databaser
+db/*.duckdb
+db/*.wal
+*.sqlite
+*.db
+
+# Data
+data/raw/**
+data/processed/**
+
+# Tillåt små exempel om du vill
+!data/processed/README.md
+
+# Secrets
+.env
+.env.*
+secrets/
