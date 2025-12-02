@@ -4,13 +4,10 @@ Kod körs som `.py` och `.ipynb` Virtuell miljö `uv venv` används för renare 
 ## Innehåll
 - [Syfte](#syfte)
 - [Miljö & versioner](#miljö--versioner)
+- [Snabbstart](#snabbstart)
 - [Struktur](#struktur)
-- [Körning](#körning)
-- [Exempeloutput](#exempeloutput)
 
 ## Syfte
-- Tydlig data-/plots-/tests-struktur.
-- Enkelt att klona och köra.
 - Källor/anteckningar i `notes.md`.
 
 ## Miljö & versioner
@@ -30,3 +27,6 @@ python -m pip install -r requirements.txt
   - `data/` med relevanta filer (t.ex. PDF med uppgiftstext).
   - Python-skript (`.py` `.ipynb`) som löser uppgifterna. T.ex. EDA
   - `notes.md` med källor och vad jag fått hjälp med (radintervall + länk).
+
+# TO DO:
+- Göra klart hela README.md
