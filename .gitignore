@@ -23,8 +23,8 @@ db/*.wal
 data/raw/**
 data/processed/**
 
-# Tillåt små exempel om du vill
-!data/processed/README.md
+# Tillåt små exempel
+# data/processed/README.md
 
 # Secrets
 .env

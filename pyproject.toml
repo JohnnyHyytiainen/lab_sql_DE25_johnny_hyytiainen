@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "black>=25.11.0",
+    "dlt[parquet,sql-database]>=1.19.1",
     "duckdb>=1.4.2",
     "ipykernel>=7.1.0",
     "jupyter>=1.1.1",
