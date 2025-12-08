@@ -16,3 +16,13 @@
  - 
  -
 
+
+# task_1 EDA querys
+ - 
+ - 
+ - 
+
+# task_2 Graphs and plots
+ - 
+ - 
+ - 
