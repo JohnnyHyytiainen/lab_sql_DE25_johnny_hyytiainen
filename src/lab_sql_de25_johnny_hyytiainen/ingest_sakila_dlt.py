@@ -1,14 +1,23 @@
 # Kommentater: Svenska
 # Kod: Engelska
-# Syfte: Göra robusta paths och idempotent. == .duckdb filen behöver ej raderas. DLT öppnar den bara
+# Syfte: Stabila paths och idempotens. == .duckdb filen behöver ej raderas. DLT öppnar den bara
 # Syfte: Bygga/uppdatera sakila.duckdb från sqlite-sakila.db med DLT
 # Syfte: Göra EDA sidan till att alltid vara read only
 # Körs från terminalen, inte från notebook
 
 from pathlib import Path
-
 import dlt
 from dlt.sources.sql_database import sql_database
+
+"""
+Task 0: Sakila Migration Pipeline
+---------------------------------
+Purpose: Migrate Sakila database from SQLite to DuckDB using DLT
+- Idempotent: Safe to run multiple times (replace mode)
+- Stable pathing: Works from any directory
+
+Run from terminal: python src/ingest_sakila_dlt.py
+"""
 
 
 def get_paths() -> tuple[Path, Path]:
