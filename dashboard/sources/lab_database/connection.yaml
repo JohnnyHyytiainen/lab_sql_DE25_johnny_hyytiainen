@@ -1,0 +1,6 @@
+# This file was automatically generated
+name: lab_database
+type: duckdb
+options:
+  filename: ../../lab_sakila.duckdb
+  # ../ betyder "gå upp en mapp". Jag bör göra det två gånger för att komma till roten.
