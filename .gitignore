@@ -16,17 +16,35 @@ __pycache__/
 # Databaser
 db/*.duckdb
 db/*.wal
+db/*.db
 *.sqlite
-*.db
+
+# Tillåt just Sakila-SQLite att trackas
+!db/lecture_db/sakila/sqlite-sakila.db
 
 # Data
 data/raw/**
 data/processed/**
 
 # Tillåt små exempel
-# data/processed/README.md
+!data/raw/README.md
+!data/processed/README.md
 
 # Secrets
 .env
 .env.*
 secrets/
+
+# --- Evidence / Node ---
+# Ignorera bibliotek för Node.js
+**/node_modules/
+
+# Ignorera Evidence temporära filer och builds
+**/.evidence/
+**/build/
+.svelte-kit/
+
+# Ignorera eventuella loggar
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
