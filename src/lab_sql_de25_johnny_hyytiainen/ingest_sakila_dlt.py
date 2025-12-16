@@ -9,19 +9,15 @@ from pathlib import Path
 import dlt
 from dlt.sources.sql_database import sql_database
 
-"""
-Task 0: Sakila Migration Pipeline
----------------------------------
-Purpose: Migrate Sakila database from SQLite to DuckDB using DLT
-- Idempotent: Safe to run multiple times (replace mode)
-- Stable pathing: Works from any directory
-
-Run from terminal: python src/ingest_sakila_dlt.py
-"""
-
 
 def get_paths() -> tuple[Path, Path]:
-    """Find repo-root and build paths to SQLite and DUCKDB."""
+    """Return absolute paths to the Sakila SQLite Database and the DuckDB file.
+    Supports Task 0: Sakila Migration Pipeline
+    ---------------------------------
+    Purpose: Migrate Sakila database from SQLite to DuckDB using DLT
+    - Idempotent pipeline: Safe to run multiple times (DuckDB tables are replaced)
+    - Stable pathing: Paths are derived from this files location, not the working directory
+    """
     here = Path(__file__).resolve()
     pkg_dir = here.parent        # /src/lab_sql_de25_johnny_hyytiainen
     src_dir = pkg_dir.parent     # /src
@@ -59,4 +55,6 @@ def run() -> None:
 
 
 if __name__ == "__main__":
+    # Run from repo root:
+    #   uv run python -m lab_sql_de25_johnny_hyytiainen.ingest_sakila_dlt
     run()
