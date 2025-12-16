@@ -4,7 +4,7 @@ Lab for the SQL course in the Data Engineer 2025 program at STI.
 
 The goal of this repo is to show a small but realistic analytics pipeline:
 
-- Ingest the classic **Sakila** movie-rental database from SQLite → DuckDB with **DLT**.
+- Ingest the classic **Sakila** movie-rental database from SQLite -> DuckDB with **DLT**.
 - Explore the data with **SQL + Python (pandas/matplotlib)** in notebooks.
 - Build a **Business Intelligence dashboard** with **Evidence** on top of DuckDB.
 
@@ -19,7 +19,7 @@ The goal of this repo is to show a small but realistic analytics pipeline:
 - pandas, matplotlib
 - Evidence (Node.js, Vite, Svelte) for the dashboard
 
-All Python dependencies are defined in `pyproject.toml` and pinned via `uv.lock`. :contentReference[oaicite:2]{index=2}  
+All Python dependencies are defined in `pyproject.toml` and pinned via `uv.lock`.  
 
 ---
 
@@ -38,30 +38,27 @@ All Python dependencies are defined in `pyproject.toml` and pinned via `uv.lock`
 ├─ src/
 │  └─ lab_sql_de25_johnny_hyytiainen/
 │     ├─ __init__.py
-│     └─ ingest_sakila_dlt.py  # DLT pipeline: SQLite → DuckDB (idempotent)
+│     └─ ingest_sakila_dlt.py  # DLT pipeline: SQLite -> DuckDB (idempotent)
 │
 ├─ notebooks/
 │  ├─ lab_sql_sakila_EDA.ipynb # Task 1–2: EDA in Python + SQL + plots
 │  └─ ...                      # (extra notebooks if needed)
 │
 ├─ sql/
-│  ├─ eda_queries.sql          # All SQL used in the EDA notebook
-│  ├─ revenue_per_genre.sql    # Top-performing genres (revenue)
-│  ├─ top_customers.sql        # Customer Lifetime Value (CLV)
-│  ├─ store_performance.sql    # Store 1 vs Store 2 revenue
-│  ├─ monthly_revenue.sql      # Monthly revenue trends for 2005
-│  └─ underperforming_films.sql# Titles with low rental activity
+│  └─ eda_queries.sql          # Most of my SQL queries used in the EDA notebook
 │
 ├─ dashboard/
 │  ├─ evidence.config.mjs      # Evidence config (DuckDB connection, project meta)
 │  └─ pages/
-│     └─ business_report.md    # Main BI dashboard for the lab
+│     ├─ index.md              # Main BI dashboard for the lab
+│     └─ check_data.md         # Sanity check to get dashboard up and running prior to BI report 
 │
 ├─ docs/
 │  └─ visuals/                 # All saved visuals in .png, Exported diagrams (joins, pipeline, etc.)
+│  │   └─ *.png
 │  ├─ notes.md                 # References, links, and what I used help for
 │  ├─ SQL_lab_visuals.md       # Mermaid ER-diagrams and process diagrams
-│  └─ .pdf                     # Both the entire lab assignment and my BI report containing the findings from the dashboard
+│  └─ *.pdf                    # Both the entire lab assignment and my BI report containing the findings from the dashboard
 │
 ├─ .gitignore
 ├─ .python-version
@@ -71,15 +68,41 @@ All Python dependencies are defined in `pyproject.toml` and pinned via `uv.lock`
 
 ## Environment & setup
 **1. Clone repository**  
-`git clone https://github.com/JohnnyHyytiainen/lab_sql_DE25_johnny_hyytiainen.git`  
-`cd lab_sql_DE25_johnny_hyytiainen`  
+
+```bash
+git clone https://github.com/JohnnyHyytiainen/lab_sql_DE25_johnny_hyytiainen.git
+cd lab_sql_DE25_johnny_hyytiainen
+```  
 **2. Create virtual environment & install deps with uv (optional, but recommended)**  
-`uv venv`  
+```bash
+uv venv
+```  
 **install everything from pyproject.toml / uv.lock**  
-`uv sync`
+```bash
+uv sync
+```
 
 
-## Documentation & references
+## How to run the lab
+### 1. Build / refresh the DuckDB database (DLT ingestion)
+
+From repo root:
+
+```bash
+uv run python -m lab_sql_de25_johnny_hyytiainen.ingest_sakila_dlt
+```
+### 2. Explore the data (EDA)  
+Open `notebooks/lab_sql_sakila_EDA.ipynb` in VS Code or Jupyter and run all cells.
+
+### 3. Start the Evidence dashboard
+```bash
+cd dashboard
+npm install        # first time only
+npm run sources    # run SQL sources in /sql
+npm run dev        # open http://localhost:3000
+```
+
+# Documentation & references
 All study notes and references are not duplicated in the README.  
 Instead:
 
