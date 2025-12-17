@@ -1,7 +1,8 @@
 # Business intelligence report - Sakila database
 
 ## 1 - Our Top Performing Genres:
-***Key insights:*** Sports and Sci-Fi generate the most revenue. The manager should prioritize acquiring more sports and action oriented films.
+***Key insights:*** We can clearly see that Sports and Sci-Fi are our top-performing genres.  
+***Recommendation:*** The manager should prioritize acquiring more titles in these categories, as they are proven revenue drivers.
 
 
 ```sql revenue_query
@@ -20,7 +21,8 @@ select * from lab_database.revenue_per_genre
 
 
 ## 2 - Customer Lifetime Value (**CLV**):
-***Key insights:*** I have identified our top 10 most valuable customers from both stores, based on total amount spent. These customers are prime candidates for a loyalty program should we decide to implement such a program in the future.
+***Key insights:*** I have calculated and identified our top 10 most valuable customers from both stores. For example, Karl Seal has spent over 220 $ at our stores.  
+***Business Value:*** These customers are prime candidates for a loyalty program should we decide to implement such a program to ensure we retain them as customers.
 
 ```sql customers_query
 -- Calculates (CLV) 
@@ -39,7 +41,7 @@ select * from lab_database.top_customers
 
 
 ## 3 - Store Performance Analysis.
-**Observation:** Store 2 is currently outperforming Store 1. **However,** Store 1 is close behind and could overtake Store 2 depending on future inventory and staffing decisions.  
+***Key insights:*** Store 2 is currently outperforming Store 1. **However,** Store 1 is close behind and could overtake Store 2 depending on future inventory and staffing decisions.  
 ***Recommendation:*** Management should investigate staffing, location and inventory discrepancies to balance performance.
 
 ```sql store_query
@@ -60,7 +62,7 @@ select * from lab_database.store_performance
 
 
 ## 4 - Seasonal Trends Analysis
-***Key insights:*** As per the Managers request, I have analyzed the revenue streams over time. We can clearly see that the end of summer (July/August) is our most profitable period. As stated in analysis #1 we should focus on having our **top performing** genres in stock, to not miss out on revenue by not having enough rentals in stock.
+***Key insights:*** I have analyzed the revenue streams over time. We can clearly see that the end of summer (July/August) is our most profitable period. As stated in analysis #1 we should focus on having our **top performing** genres in stock, to not miss out on revenue by not having enough rentals in stock.
 
 ```sql monthly_trends_query
 -- Groups by month using strftime. Filters out incomplete data from 2006-02
