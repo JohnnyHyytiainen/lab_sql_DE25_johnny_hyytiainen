@@ -5,7 +5,7 @@
 
 
 ## Visualization of data pipeline architecture:
-![Data Pipeline Architecture](visuals/Data_Pipeline_Architecture.png)
+![Data Pipeline Architecture](/docs/visuals/Data_Pipeline_Architecture.png)
 
 ## Visualization of revenue & CLV logic
-![SQL Logic Visualized](visuals/SQL_logic_visualized.png)
+![SQL Logic Visualized](/docs/visuals/SQL_logic_visualized.png)
